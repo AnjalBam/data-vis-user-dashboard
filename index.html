@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=`, initial-scale=1.0" />
+    <title>Admin</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/stylesheets/stylesheets/css/styles.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/9904296e39.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="./assets/fonts/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="admin__external-wrapper">
+      <main class="row h-100">
+        <!-- Sidebar -->
+        <section class="col-md-3 col-lg-2 d-none d-md-block sidebar">
+          <div class="sidebar__wrapper">
+            <div class="sidebar__wrapper__header">
+              <h1 class="sidebar__wrapper__header__head text-break">
+                MyECommerce
+              </h1>
+            </div>
+            <div class="overlay overlay0"></div>
+            <div class="overlay"></div>
+            <div class="links-wrapper">
+              <ul class="sidebar-links">
+                <li
+                  id="link"
+                  class="d-block sidebar-links__link active"
+                  onclick="toggleLink()"
+                >
+                  Dashboard
+                </li>
+                <li class="d-block sidebar-links__link">Products</li>
+                <li class="d-block sidebar-links__link">Sales</li>
+                <li class="d-block sidebar-links__link">Product edit</li>
+                <li class="d-block sidebar-links__link">Emails</li>
+                <li class="d-block sidebar-links__link">Contacts</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- Sidebar -->
+        <!-- DashboardDetails -->
+        <section class="col-md-9 col-lg-10 dashboard">
+          <div class="overview-bg bg-primary"></div>
+          <div class="dashboard__header-wrapper">
+            <div class="dashboard-header">
+              <div class="dashboard-header__search-bar">
+                <input
+                  type="text"
+                  name="querystr"
+                  id="search"
+                  placeholder="Type here..."
+                />
+                <input type="submit" value="Go" class="text-white" />
+                <!-- <button class="search-btn">Go</button> -->
+              </div>
+              <div class="dashboard-header__details-section">
+                <div class="app">
+                  <i class="fas fa-th-large text-white"></i>
+                </div>
+                <div class="notifications">
+                  <i class="far fa-bell text-white"></i>
+                </div>
+                <div class="options">
+                  <i class="fas fa-ellipsis-v text-white"></i>
+                </div>
+                <div class="avatar">
+                  <i class="fas fa-user-circle text-white"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Overview section -->
+          <div class="overview">
+            <div class="overview__wrapper">
+              <div class="overview__wrapper__header-wrapper">
+                <h1 class="text-white">Overview</h1>
+              </div>
+            </div>
+            <div class="overview__content-section">
+              <div class="content-wrapper row mr-4 ml-1">
+                <div class="col-6 card-wrapper col-lg-3 mb-2">
+                  <div class="card-content row mr-1">
+                    <div class="content col-8">
+                      <div class="card-header-wrapper">
+                        <h2 class="card-head">100</h2>
+                      </div>
+                      <p>Total Orders</p>
+                    </div>
+                    <h2
+                      class="col-4 card-icon align-self-center d-flex align-items-center justify-content-center"
+                    >
+                      <i class="fas fa-shopping-bag"></i>
+                    </h2>
+                  </div>
+                </div>
+                <div class="card-wrapper col-6 col-lg-3 mb-2">
+                  <div class="card-content row">
+                    <div class="content col-8">
+                      <div class="card-header-wrapper">
+                        <h2 class="card-head">30</h2>
+                      </div>
+                      <p>Pending</p>
+                    </div>
+                    <h2
+                      class="col-4 card-icon align-self-center d-flex align-items-center justify-content-center"
+                    >
+                      <i class="fas fa-credit-card"></i>
+                    </h2>
+                  </div>
+                </div>
+                <div class="card-wrapper col-6 col-lg-3 mb-2">
+                  <div class="card-content row">
+                    <div class="content col-8">
+                      <div class="card-header-wrapper">
+                        <h2 class="card-head">100</h2>
+                      </div>
+                      <p>Cancelled</p>
+                    </div>
+                    <h2
+                      class="col-4 card-icon align-self-center d-flex align-items-center justify-content-center"
+                    >
+                      <i class="fas fa-chart-line"></i>
+                    </h2>
+                  </div>
+                </div>
+                <div class="card-wrapper col-6 col-lg-3 mb-2">
+                  <div class="card-content row">
+                    <div class="content col-8">
+                      <div class="card-header-wrapper">
+                        <h2 class="card-head">396</h2>
+                      </div>
+                      <p>Delivered</p>
+                    </div>
+                    <h2
+                      class="col-4 card-icon align-self-center d-flex align-items-center justify-content-center"
+                    >
+                      <i class="fas fa-chart-pie"></i>
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Overview section -->
+          <div class="row graphical-section mr-4 ml-2">
+            <div class="graphical-inner col-7">
+              <div class="graph-wrapper">
+                <h1>Total Sales</h1>
+              </div>
+            </div>
+            <div class="graphical-inner col-5">
+              <div class="graph-wrapper">
+                <h1>Categories</h1>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- DashboardDetails -->
+      </main>
+    </div>
+    <script>
+      const sidebarLink = document.getElementById("link");
+      const toggleLink = () => {
+        if (sidebarLink.className.includes("active")) {
+          sidebarLink.classList.remove("active");
+        } else {
+          sidebarLink.classList.add("active");
+        }
+      };
+    </script>
+  </body>
+</html>

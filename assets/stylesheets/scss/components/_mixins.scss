@@ -1,0 +1,11 @@
+@mixin create_linear_gradient($color0, $color1) {
+  background: linear-gradient($color0, $color1);
+}
+
+@mixin set_bg($color, $opacity) {
+  background: rgba($color, $opacity);
+}
+
+@mixin add_transition {
+  transition: ease-in-out 0.2s;
+}

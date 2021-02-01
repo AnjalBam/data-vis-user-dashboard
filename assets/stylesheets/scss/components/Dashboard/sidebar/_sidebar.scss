@@ -1,0 +1,66 @@
+@import "../../variables";
+
+.sidebar {
+  position: relative;
+  @include create_linear_gradient($theme_primary_darker, $sidebar_secondary);
+  border-radius: 0 50px 50px 0;
+  padding: 10px 10px 0 10px;
+  padding-top: 50px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    &__header {
+      color: $admin_color_light;
+      padding: 0 0 0 15px;
+      &__head {
+        margin: 0;
+        font-size: 2rem;
+      }
+    }
+    .links-wrapper {
+      padding-top: 30px;
+      padding-left: 10px;
+      .sidebar-links {
+        padding-left: 5px;
+        font-size: 1.25rem;
+        color: $admin_color_light;
+        &__link {
+          padding: 6px 10px 6px 10px;
+          margin: 3px 0;
+          border-radius: 7px;
+          &.active {
+            background: $theme_bg_primary;
+            color: $theme_dark;
+            transform: translateX(15px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            &:hover {
+              background: $theme_bg_primary;
+              color: $theme_dark;
+            }
+          }
+          &:hover {
+            @include set_bg($theme_accent, 0.1);
+          }
+        }
+      }
+    }
+  }
+  .overlay {
+    border-radius: 50%;
+    position: absolute;
+    height: 100px;
+    bottom: 0;
+    width: 100px;
+    background: linear-gradient(
+      rgba($theme_primary_darker, 0.4),
+      $sidebar_secondary
+    );
+    &.overlay0 {
+      height: 120px;
+      width: 120px;
+      top: 50%;
+      right: 20%;
+    }
+  }
+}

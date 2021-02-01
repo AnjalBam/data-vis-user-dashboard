@@ -1,0 +1,107 @@
+@import "../variables";
+
+.overview {
+  padding-left: 5px;
+  &__wrapper {
+    margin-top: 10px;
+    &__header-wrapper h1 {
+      font-size: 2.1rem;
+      color: #4da2c3;
+      position: relative;
+      &::before {
+        content: "";
+        height: 5px;
+        position: absolute;
+        width: 20px;
+        bottom: 100%;
+        left: 13px;
+        border-radius: 10px;
+        background: linear-gradient(
+          -45deg,
+          $theme_primary_darker,
+          $sidebar_secondary
+        );
+        // background: #4da2c3;
+      }
+      &::after {
+        content: "";
+        height: 5px;
+        position: absolute;
+        width: 5px;
+        border-radius: 50%;
+        bottom: 100%;
+        left: 5px;
+        // background: linear-gradient(
+        //   -45deg,
+        //   $theme_primary_darker,
+        //   $sidebar_secondary
+        // );
+        background: $theme_primary;
+      }
+    }
+  }
+  &__content-section {
+    margin-top: 10px;
+    .content-wrapper {
+      display: flex;
+      .card-wrapper {
+        padding: 4px;
+        &:first-child .card-content {
+          background: #5e72e4 !important;
+        }
+        &:nth-child(2) .card-content {
+          background: #0da5c0 !important;
+        }
+        &:nth-child(3) .card-content {
+          background: #fb6340 !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        &:last-child .card-content {
+          background: #2dce89 !important;
+        }
+        .card-content {
+          height: 100%;
+          width: 100%;
+          border-radius: 10px;
+          padding: 20px 10px;
+          color: white;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          h2.card-icon {
+            padding: 10px;
+            height: 100%;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+          }
+          .content {
+            h2 {
+              position: relative;
+              &::before {
+                content: "";
+                height: 5px;
+                width: 30px;
+                position: absolute;
+                left: 15px;
+                top: 100%;
+                background-color: rgba(255, 255, 255, 0.5);
+                border-radius: 10px;
+              }
+              &::after {
+                content: "";
+                height: 5px;
+                width: 5px;
+                position: absolute;
+                right: 100%;
+                top: 100%;
+                left: 5px;
+                background-color: rgba(255, 255, 255, 0.5);
+                border-radius: 10px;
+              }
+            }
+            p {
+              font-size: 1.25rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
